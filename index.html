@@ -194,45 +194,29 @@
   </div>
 
   <script>
+
+
+
 const questions = [
-  { text: "Welcher Artikel passt zum Wort „Strand“?", options: ["die", "der", "das", "den"], correct: 1 },
-  { text: "Was ist der Plural von „der Vergleich“?", options: ["die Vergleiche", "die Vergleichs", "die Vergleichen", "das Vergleiche"], correct: 0 },
-  { text: "Was ist „Säugetier“?", options: ["feminin", "maskulin", "neutral", "plural"], correct: 2 },
-  { text: "Was gehört nicht zu den Meeresfrüchten?", options: ["Tintenfisch", "Krake", "Wal", "Muschel"], correct: 2 },
-  { text: "Was ist eine Gemeinsamkeit von O und Z?", options: ["Sie riechen gleich", "Sie haben beide Kreise", "Sie sehen ähnlich aus", "Sie sind Farben"], correct: 2 },
-
-  { text: "Was sollte man auf dem offenen Meer nicht vergessen?", options: ["Sonnenbrille", "Sonnencreme", "Wintermantel", "Regenschirm"], correct: 1 },
-  { text: "Was passiert, wenn man sich nicht eincremt?", options: ["Man wird braun", "Man bekommt Hunger", "Man kann sich die Haut verbrennen", "Man schläft besser"], correct: 2 },
-  { text: "Was bedeutet: „zu zweit“?", options: ["allein", "mit zwei Personen", "zu viele", "nur Kinder"], correct: 1 },
-  { text: "Was bedeutet: „sich einen Traum erfüllen“?", options: ["aufwachen", "einen Wunsch realisieren", "einen Traum vergessen", "etwas essen"], correct: 1 },
-  { text: "Was gehört zu den Aufgaben eines Au-Pair-Mädchens?", options: ["Steuern zahlen", "Kinder betreuen", "Gebäude renovieren", "Vorträge halten"], correct: 1 },
-
-  { text: "Ich denke daran, dass ich morgen arbeiten muss. Was bedeutet das?", options: ["Ich vergesse es", "Ich plane, es zu tun", "Ich erinnere mich daran", "Ich lehne es ab"], correct: 2 },
-  { text: "Was passt zu „teilnehmen“?", options: ["an", "über", "mit", "für"], correct: 0 },
-  { text: "Was passt zu: „Ich bewerbe mich … eine Stelle“?", options: ["auf", "an", "um", "mit"], correct: 2 },
-  { text: "Ich bin begeistert ... deinem Projekt!", options: ["mit", "über", "von", "aus"], correct: 2 },
-  { text: "Wie bedankt man sich korrekt?", options: ["bei jemandem für etwas", "für jemanden bei etwas", "über etwas", "auf etwas mit jemandem"], correct: 0 },
-
-  { text: "Welche Form ist korrekt für Bewegung nach außen?", options: ["hinein", "draußen", "hinaus", "rein"], correct: 2 },
-  { text: "Welche Bewegung passt: „Ich gehe in die Wohnung“?", options: ["raus", "rein", "hinaus", "draußen"], correct: 1 },
-  { text: "Ich gehe aus dem Büro …", options: ["rein", "raus", "ein", "hoch"], correct: 1 },
-
-  { text: "Mit wem gehst du ins Kino?", options: ["Damit", "Mit ihm", "Dafür", "Für ihn"], correct: 1 },
-  { text: "Wofür interessierst du dich?", options: ["Dafür", "Darauf", "Worauf", "Womit"], correct: 0 },
-  { text: "Womit schreibst du?", options: ["Mit einem Stift", "Dafür", "Über ein Buch", "An eine Freundin"], correct: 0 },
-
-  { text: "Was ist korrekt im Konjunktiv II?", options: ["Ich werde gehen", "Ich gehe vielleicht", "Ich würde gehen", "Ich ginge hatte"], correct: 2 },
-  { text: "Was bedeutet: „Ich hätte gern gespielt“?", options: ["Ich spiele jetzt", "Ich wollte früher nicht spielen", "Ich wäre gern ein Spieler", "Ich wünschte, ich hätte gespielt"], correct: 3 },
-  { text: "Ich kann mir vorstellen, … einen Salon zu eröffnen.", options: ["dass ich", "dass ich werde", "einen", "zu eröffnen"], correct: 2 },
-
-  { text: "Was ist „eine Beförderung“?", options: ["Eine Kündigung", "Eine Einladung", "Eine höhere Position im Job", "Ein Bewerbungsgespräch"], correct: 2 },
-  { text: "Was bedeutet „selbstständig sein“?", options: ["Ich arbeite bei der Regierung", "Ich arbeite für mich selbst", "Ich bin arbeitslos", "Ich bin Schüler"], correct: 1 },
-  { text: "Was passiert, wenn etwas schiefgeht?", options: ["Es läuft perfekt", "Es funktioniert nicht", "Es ist gesund", "Es ist erfolgreich"], correct: 1 },
-
-  { text: "Was ist der Genitiv von „die Frau“?", options: ["der Frau", "die Frau", "den Frauen", "der Frauen"], correct: 0 },
-  { text: "Was ist der Genitiv von „das Kind“?", options: ["des Kindes", "dem Kind", "der Kind", "das Kindes"], correct: 0 },
-  { text: "Was ist der Genitiv von „die Tiere“?", options: ["der Tiere", "des Tiere", "den Tieren", "der Tieren"], correct: 0 }
+  { text: "Mein___ letzter Urlaub habe ich auf den Kanarischen Inseln verbracht.", options: ["e", "en", "em", "er"], correct: 1 },
+  { text: "Es war wunderschön___.", options: ["e", "em", "er", "–"], correct: 3 },
+  { text: "Wir hatten immer schön___ Wetter.", options: ["es", "em", "en", "er"], correct: 0 },
+  { text: "Und der Himmel war immer bla___.", options: ["u", "uen", "ues", "uem"], correct: 0 },
+  { text: "Natürlich habe ich mir auch ein toll___ Andenken gekauft.", options: ["er", "es", "en", "em"], correct: 1 },
+  { text: "Ein___ typisch___ kanarisch___ Hut – erste Lücke:", options: ["en", "em", "er", "es"], correct: 2 },
+  { text: "Ein___ typisch___ kanarisch___ Hut – zweite Lücke:", options: ["er", "es", "em", "en"], correct: 1 },
+  { text: "Ein___ typisch___ kanarisch___ Hut – dritte Lücke:", options: ["er", "es", "en", "em"], correct: 2 },
+  { text: "Den die freundlich___, lebenslustig___ Einwohner dort tragen – erste Lücke:", options: ["e", "en", "em", "er"], correct: 1 },
+  { text: "Den die freundlich___, lebenslustig___ Einwohner dort tragen – zweite Lücke:", options: ["e", "en", "er", "em"], correct: 1 },
+  { text: "Ich habe auch viel___ interessant___ Orte besucht.", options: ["e", "en", "em", "es"], correct: 1 },
+  { text: "Außergewöhnlich___ Fotos gemacht – erste Lücke:", options: ["e", "en", "es", "er"], correct: 0 },
+  { text: "Und im herrlich warm___ Meer gebadet – zweite Lücke:", options: ["es", "em", "en", "er"], correct: 1 },
+  { text: "Ach, das war einfach ein___ fantastisch___ Reise – erste Lücke:", options: ["e", "en", "es", "er"], correct: 2 },
+  { text: "Ach, das war einfach ein___ fantastisch___ Reise – zweite Lücke:", options: ["e", "en", "es", "er"], correct: 0 },
+  { text: "Ich freue mich schon auf den nächst___ Sommer.", options: ["e", "en", "er", "es"], correct: 2 },
+  { text: "Denn da fliege ich wieder auf die Kanarisch___ Inseln!", options: ["e", "en", "em", "es"], correct: 0 },
 ];
+
 
 
     let currentQuestion = 0;
