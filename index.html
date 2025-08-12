@@ -124,6 +124,16 @@
       background-color: #777;
     }
 
+    .result-screen {
+      display: none;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      overflow-y: auto; /* ✨ Scrollen nur auf Auswertungsseite erlauben */
+    }
+
     .result-screen h2 {
       font-size: 1.5em;
     }
@@ -195,82 +205,194 @@
       <a href="https://www.instagram.com/jazzupyourgerman/" target="_blank">📸</a>
     </div>
   </div>
-
   <script>
 const questions = [
-  { text: "Was bedeutet „Haupt-“?", options: ["unwichtig", "das Wichtigste"], correct: 1 },
-  { text: "Was bedeutet „eine Rede halten“?", options: ["vor Publikum sprechen", "einen Brief schreiben"], correct: 0 },
-  { text: "Was ist „die Rede“?", options: ["ein Musikstück", "ein gesprochenes Statement"], correct: 1 },
-  { text: "Was ist der Plural von „die Rede“?", options: ["die Redungen", "die Reden"], correct: 1 },
-  { text: "Was ist ein „Vortrag“?", options: ["eine vorbereitete Präsentation", "ein langes Gespräch"], correct: 0 },
-  { text: "Was ist der Plural von „der Vortrag“?", options: ["die Vorträge", "die Vorträgen"], correct: 0 },
-  { text: "Was bedeutet „mehr als geplant“?", options: ["über der ursprünglichen Menge", "weniger als gedacht"], correct: 0 },
-  { text: "Was bedeutet: Es könnte mehr Studenten kommen, als…", options: ["wir Plätze brauchen", "wir Stühle haben"], correct: 1 },
-  { text: "Was bedeutet „schief gehen“?", options: ["besonders erfolgreich sein", "nicht wie geplant verlaufen"], correct: 1 },
-  { text: "Was verkauft die Firma für festliche Kleider?", options: ["elegante Kleidung für besondere Anlässe", "Sportkleidung"], correct: 0 },
-  { text: "Was beschreibt die Abschlussfeier?", options: ["Das Ende eines Studiums", "Den Beginn eines Semesters"], correct: 0 },
-  { text: "Was ist eine öffentliche Uni?", options: ["staatlich finanziert", "privat betrieben"], correct: 0 },
-  { text: "Wie wird eine private Uni finanziert?", options: ["durch Studiengebühren", "durch den Staat"], correct: 0 },
-  { text: "Was fragt man mit: Hängst du ab von Lieferungen?", options: ["Ob du auf Lieferungen wartest", "Ob du Freizeit hast"], correct: 0 },
-  { text: "Was trägt man zur Abschlussfeier?", options: ["Badeanzug", "Robe und Hut"], correct: 1 },
-  { text: "Was ist der korrekte Plural von Robe und Hut?", options: ["die Robes / die Huts", "die Roben / die Hüte"], correct: 1 },
-  { text: "Was ist GraduationMaster vermutlich?", options: ["eine Lieferfirma für Abschlusskleidung", "eine Sportmannschaft"], correct: 0 },
-  { text: "Was bedeutet „geliefert werden“?", options: ["selbst abholen", "irgendwohin gebracht bekommen"], correct: 1 },
-  { text: "Was bedeutet „bereitstellen“?", options: ["verstecken", "zur Verfügung stellen"], correct: 1 },
-  { text: "Was bedeutet „sich kümmern um“?", options: ["Verantwortung übernehmen", "ignorieren"], correct: 0 },
-  { text: "Was bedeutet „anfangen“?", options: ["abbrechen", "starten"], correct: 1 },
-  { text: "Was bedeutet „dieses Mal“?", options: ["genau bei dieser Gelegenheit", "irgendwann"], correct: 0 },
-  { text: "Was bedeutet „sehr viel“?", options: ["kaum", "in großer Menge"], correct: 1 },
-  { text: "Was bedeutet „etwas selbst übernehmen“?", options: ["jemand anderem geben", "es alleine machen"], correct: 1 },
-  { text: "Was bedeutet „delegieren“?", options: ["selbst machen", "weitergeben"], correct: 1 },
-  { text: "Was soll man bei Fristen tun?", options: ["sie vergessen", "aufmerksam beachten"], correct: 1 },
-  { text: "Was macht eine Moderatorin?", options: ["sie leitet eine Veranstaltung", "sie ist die Dekanin"], correct: 0 },
-  { text: "Wer ist ein Propst?", options: ["ein Sporttrainer", "eine kirchliche Figur"], correct: 1 },
-  { text: "Wer ist ein Dekan?", options: ["ein Student", "ein leitender Uni-Mitarbeiter"], correct: 1 },
-  { text: "Was bedeutet: auf dem Programm stehen?", options: ["nicht geplant sein", "offiziell geplant sein"], correct: 1 },
-  { text: "Wann beginnt das Hauptprogramm?", options: ["Um 13:00 Uhr", "Um 15:00 Uhr"], correct: 0 },
-  { text: "Was ist ein nicht-alkoholisches Getränk?", options: ["Wasser", "Bier"], correct: 0 },
-  { text: "Was bedeutet „gute Laune haben“?", options: ["traurig sein", "fröhlich sein"], correct: 1 },
-  { text: "Was ist ein Programm in diesem Kontext?", options: ["ein Ablaufplan", "ein Computer"], correct: 0 },
-  { text: "Was gehört zu einer Präsentation?", options: ["Spiele", "Folien und Vortrag"], correct: 1 },
-  { text: "Was passiert bei Besprechungen?", options: ["Es wird diskutiert", "Es wird geschlafen"], correct: 0 },
-  { text: "Was kann Plattform bedeuten?", options: ["nur ein Möbelstück", "Online-Tool für Events"], correct: 1 },
-  { text: "Was ist ein Event?", options: ["eine Note", "ein Ereignis"], correct: 1 },
-  { text: "Wann ist das „nächste Mal“?", options: ["beim nächsten Termin", "jetzt"], correct: 0 },
-  { text: "Was bedeutet „beim nächsten Mal“?", options: ["beim kommenden Anlass", "immer"], correct: 0 },
-  { text: "Was bedeutet: A steht über B?", options: ["A hat mehr Bedeutung", "A ist unwichtiger"], correct: 0 },
-  { text: "Was ist ein Probst?", options: ["ein Professor", "jemand in der Kirche"], correct: 1 },
-  { text: "Was macht ein Dekan?", options: ["Er ist ein Musiker", "Er leitet eine Fakultät"], correct: 1 },
-  { text: "Was bedeutet „ich weiß“?", options: ["Ich bin verloren", "Ich kenne die Information"], correct: 1 },
-  { text: "Was bedeutet „du weißt“?", options: ["Du hast keine Ahnung", "Du kennst es"], correct: 1 },
-  { text: "Was bedeutet „er weiß“?", options: ["Er hört Musik", "Er kennt die Info"], correct: 1 },
-  { text: "Was bedeutet „ich habe etwas zu tun“?", options: ["Ich bin beschäftigt", "Ich langweile mich"], correct: 0 },
-  { text: "Was bedeutet „ich muss“?", options: ["Ich bin verpflichtet", "Ich will nicht"], correct: 0 },
-  { text: "Was bedeutet „du musst“?", options: ["Du hast keine Lust", "Du bist verpflichtet"], correct: 1 },
-  { text: "Was bedeutet „er muss“?", options: ["Er darf", "Er ist verpflichtet"], correct: 1 },
-  { text: "Was bedeutet „wir müssen“?", options: ["Wir haben die Pflicht", "Wir können freiwillig"], correct: 0 },
-  { text: "Was bedeutet „ihr müsst“?", options: ["Ihr seid verpflichtet", "Ihr seid fertig"], correct: 0 },
-  { text: "Was bedeutet „sie müssen“?", options: ["Sie haben keine Aufgaben", "Sie haben Pflichten"], correct: 1 },
-  { text: "Wer ist die Abteilungsleiterin?", options: ["die Chefin einer Abteilung", "eine Mitarbeiterin"], correct: 0 },
-  { text: "Was bedeutet „der freie Wille“?", options: ["Zwang", "selbst entscheiden können"], correct: 1 },
-  { text: "Was bedeutet „freiwillig helfen“?", options: ["aus Zwang helfen", "aus eigener Motivation helfen"], correct: 1 },
-  { text: "Was ist ein freiwilliger Helfer?", options: ["jemand, der freiwillig hilft", "jemand, der gezwungen wird"], correct: 0 },
-  { text: "Was ist eine Veranstaltung?", options: ["ein Möbelstück", "ein Treffen oder Event"], correct: 1 },
-  { text: "Was bedeutet „sich mit jemandem treffen“?", options: ["jemanden verlieren", "gemeinsam verabreden"], correct: 1 },
-  { text: "Was bedeutet „jemanden treffen“?", options: ["mit jemandem zusammenkommen", "jemanden ignorieren"], correct: 0 },
-  { text: "Was bedeutet „feste Preise“?", options: ["verhandelbare Preise", "unveränderliche Preise"], correct: 1 },
-  { text: "Was bedeutet „verhandeln“?", options: ["schweigen", "über etwas sprechen und entscheiden"], correct: 1 },
-  { text: "Was bedeutet: Ich hole mir den Kaffee?", options: ["Ich nehme ihn für mich", "Ich bringe ihn jemand anderem"], correct: 0 },
-  { text: "Was bedeutet: Ich bringe dir den Kaffee?", options: ["Ich bringe ihn zu dir", "Ich nehme ihn selbst"], correct: 0 },
-  { text: "Was bedeutet: Hast du dir deine Rede selbst ausgedacht?", options: ["Hast du sie selbst erfunden?", "Hast du sie irgendwo kopiert?"], correct: 0 },
-  { text: "Was bedeutet: Wird es eine Videoaufnahme geben?", options: ["Wird das Ereignis gefilmt?", "Gibt es ein Fotoalbum?"], correct: 0 },
-  { text: "Was bedeutet „öffentlich zugänglich“?", options: ["nur für Mitarbeiter", "für alle erreichbar"], correct: 1 },
-  { text: "Was bedeutet „kochen“?", options: ["mit Wasser oder Hitze zubereiten", "einfrieren"], correct: 0 },
-  { text: "Was bedeutet „backen“?", options: ["kalt servieren", "im Ofen zubereiten"], correct: 1 }
-
+  { 
+    text: "Was bedeutet „Froschteich“?", 
+    options: ["frog egg", "frog pond"], 
+    correct: 1 
+  },
+  { 
+    text: "Was heißt „künstlich“?", 
+    options: ["artificial", "natural"], 
+    correct: 0 
+  },
+  { 
+    text: "Was sind „Echseneier“?", 
+    options: ["lizard eggs", "fish eggs"], 
+    correct: 0 
+  },
+  { 
+    text: "„Sie züchtet verschiedene Spezies“ heißt:", 
+    options: ["She eats different species", "She breeds different species"], 
+    correct: 1 
+  },
+  { 
+    text: "„Fische vertragen sich nicht gut mit Echsen“ bedeutet:", 
+    options: ["Fish get along well with lizards", "Fish don’t get along well with lizards"], 
+    correct: 1 
+  },
+  { 
+    text: "Wie sagt man „Pflanzt du Dinge auf deinem Balkon?“ auf Englisch?", 
+    options: ["Do you plant things on your balcony?", "Do you eat things on your balcony?"], 
+    correct: 0 
+  },
+  { 
+    text: "Was ist der „Zitronenbaum“?", 
+    options: ["lime tree", "lemon tree"], 
+    correct: 1 
+  },
+  { 
+    text: "„Ich habe ihn seit Juni“ bedeutet:", 
+    options: ["I got it in June and then sold it", "I have had it since June"], 
+    correct: 1 
+  },
+  { 
+    text: "Was bedeutet „reif“ (bei Obst)?", 
+    options: ["ripe", "raw"], 
+    correct: 0 
+  },
+  { 
+    text: "„Dem Baum fehlen die Nährstoffe“ bedeutet:", 
+    options: ["The tree lacks nutrients", "The tree has too many nutrients"], 
+    correct: 0 
+  },
+  { 
+    text: "Was ist ein „Gewächshaus“?", 
+    options: ["garden shed", "greenhouse"], 
+    correct: 1 
+  },
+  { 
+    text: "Wie sagt man „jemanden zum Flughafen bringen“?", 
+    options: ["to pick someone up from the airport", "to take someone to the airport"], 
+    correct: 1 
+  },
+  { 
+    text: "Was bedeutet „würde der Baum wachsen, wenn es draußen wärmer wäre?“?", 
+    options: ["Would the tree grow if it were warmer outside?", "Did the tree grow when it was warmer outside?"], 
+    correct: 0 
+  },
+  { 
+    text: "Was ist der Unterschied zwischen „in“ und „aus“ (lokale Präpositionen)?", 
+    options: ["in = into / inside, aus = out of", "in = on top of, aus = under"], 
+    correct: 0 
+  },
+  { 
+    text: "„an/auf“ vs „von“ – welches Paar passt?", 
+    options: ["an/auf = from, von = position", "an/auf = position or contact, von = from"], 
+    correct: 1 
+  },
+  { 
+    text: "Wie sagt man „ich werde“ auf Englisch?", 
+    options: ["I will", "I was"], 
+    correct: 0 
+  },
+  { 
+    text: "„du wirst“ heißt:", 
+    options: ["you will", "you were"], 
+    correct: 0 
+  },
+  { 
+    text: "Was ist „die Kreide“?", 
+    options: ["marker", "chalk"], 
+    correct: 1 
+  },
+  { 
+    text: "„In Geografie lernt man etwas über …“", 
+    options: ["countries", "numbers"], 
+    correct: 0 
+  },
+  { 
+    text: "„Im Chemieunterricht“ bedeutet:", 
+    options: ["In chemistry class", "In physics class"], 
+    correct: 0 
+  },
+  { 
+    text: "Was ist „Ökologie und Umweltschutz“?", 
+    options: ["ecology and environmental protection", "biology and chemistry"], 
+    correct: 0 
+  },
+  { 
+    text: "„Sich auf etwas spezialisieren“ bedeutet:", 
+    options: ["to specialize in something", "to be interested in something"], 
+    correct: 0 
+  },
+  { 
+    text: "„Ich habe mich für … entschieden“ heißt:", 
+    options: ["I prepared for …", "I decided for …"], 
+    correct: 1 
+  },
+  { 
+    text: "„einfach so“ bedeutet:", 
+    options: ["with a special reason", "just because"], 
+    correct: 1 
+  },
+  { 
+    text: "„Was wünschst du dir?“ heißt:", 
+    options: ["What do you wish for?", "What do you give yourself?"], 
+    correct: 0 
+  },
+  { 
+    text: "„Nachhilfeunterricht“ ist:", 
+    options: ["private tutoring", "class trip"], 
+    correct: 0 
+  },
+  { 
+    text: "„sich verbessern“ bedeutet:", 
+    options: ["to get worse", "to improve"], 
+    correct: 1 
+  },
+  { 
+    text: "„etwas macht jemandem Spaß“ heißt:", 
+    options: ["someone hates something", "someone enjoys something"], 
+    correct: 1 
+  },
+  { 
+    text: "„Hat dir der Job Spaß gemacht?“ bedeutet:", 
+    options: ["Did you enjoy the job?", "Did you quit the job?"], 
+    correct: 0 
+  },
+  { 
+    text: "„Wirst du Samstagnacht schlafen können?“ heißt:", 
+    options: ["Will you be able to sleep Saturday night?", "Did you sleep Saturday night?"], 
+    correct: 0 
+  },
+  { 
+    text: "„umarmen“ bedeutet:", 
+    options: ["to run", "to hug"], 
+    correct: 1 
+  },
+  { 
+    text: "„auf etwas aufpassen“ heißt:", 
+    options: ["to take care of something", "to break something"], 
+    correct: 0 
+  },
+  { 
+    text: "„mitschreiben“ bedeutet:", 
+    options: ["to take notes", "to write a book"], 
+    correct: 0 
+  },
+  { 
+    text: "„aufpassen“ bedeutet:", 
+    options: ["to pay attention", "to sleep"], 
+    correct: 0 
+  },
+  { 
+    text: "„ungewöhnlich“ heißt:", 
+    options: ["unusual", "usual"], 
+    correct: 0 
+  },
+  { 
+    text: "„beeindruckt sein von“ bedeutet:", 
+    options: ["to be impressed by", "to be bored by"], 
+    correct: 0 
+  },
+  { 
+    text: "„eine Beziehung führen“ heißt:", 
+    options: ["to end a relationship", "to be in a relationship"], 
+    correct: 1 
+  }
 ];
-
-
     let currentQuestion = 0;
     let score = 0;
     let incorrectAnswers = [];
@@ -279,6 +401,7 @@ const questions = [
     function startQuiz() {
       document.querySelector('.start-screen').style.display = 'none';
       document.querySelector('.question-screen').style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // ✨ Scrollen verhindern
       showQuestion();
     }
 
@@ -354,6 +477,7 @@ const questions = [
       document.querySelector('.question-screen').style.display = 'none';
       const resultScreen = document.querySelector('.result-screen');
       resultScreen.style.display = 'flex';
+      document.body.style.overflow = 'auto'; // ✨ Scrollen auf Auswertungsseite erlauben
 
       const scoreText = document.getElementById('score-text');
       scoreText.textContent = `Du hast ${score} von ${questions.length} richtig.`;
@@ -378,6 +502,7 @@ const questions = [
 
       document.querySelector('.result-screen').style.display = 'none';
       document.querySelector('.start-screen').style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // ✨ Scrollen wieder deaktivieren
     }
 
     // Swipe gesture support
