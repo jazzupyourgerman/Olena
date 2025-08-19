@@ -205,323 +205,152 @@
       <a href="https://www.instagram.com/jazzupyourgerman/" target="_blank">📸</a>
     </div>
   </div>
-  <script>
+<script>
 const questions = [
-  { 
-    text: "Was bedeutet „die Hälfte“?", 
-    options: ["half", "double"], 
-    correct: 0 
-  },
-  { 
-    text: "„das Doppelte“ bedeutet:", 
-    options: ["the double", "the half"], 
-    correct: 0 
-  },
-  { 
-    text: "Wie sagt man 1/4 auf Deutsch?", 
-    options: ["ein Viertel", "ein Fünftel"], 
-    correct: 0 
-  },
-  { 
-    text: "Was ist 1/3?", 
-    options: ["ein Drittel", "ein Viertel"], 
-    correct: 0 
-  },
-  { 
-    text: "„4 ist doppelt so viel wie 2“ heißt auch:", 
-    options: ["4 ist das Doppelte von 2", "4 ist die Hälfte von 2"], 
-    correct: 0 
-  },
-  { 
-    text: "„12 ist das Dreifache von 4“ bedeutet:", 
-    options: ["12 ist dreimal so viel wie 4", "12 ist doppelt so viel wie 4"], 
-    correct: 0 
-  },
-  { 
-    text: "„16 ist das Vierfache von 4“ bedeutet:", 
-    options: ["16 = 4 × 4", "16 = 4 × 3"], 
-    correct: 0 
-  },
-  { 
-    text: "„Die Temperatur geht hoch“ bedeutet:", 
-    options: ["The temperature is going down", "The temperature is going up"], 
-    correct: 1 
-  },
-  { 
-    text: "„Die Temperatur steigt an“ heißt:", 
-    options: ["The temperature rises", "The temperature falls"], 
-    correct: 0 
-  },
-  { 
-    text: "„Die Temperatur ist angestiegen am Abend“ bedeutet:", 
-    options: ["The temperature dropped in the evening", "The temperature rose in the evening"], 
-    correct: 1 
-  },
-  { 
-    text: "„Die Temperaturen gehen runter“ heißt:", 
-    options: ["The temperatures are going down", "The temperatures are going up"], 
-    correct: 0 
-  },
-  { 
-    text: "„Die Temperaturen sinken“ bedeutet:", 
-    options: ["The temperatures decrease", "The temperatures increase"], 
-    correct: 0 
-  },
-  { 
-    text: "„Die Temperatur ist nicht gesunken“ bedeutet:", 
-    options: ["The temperature did not go down", "The temperature did not go up"], 
-    correct: 0 
-  },
-  { 
-    text: "Was ist ein „Diagramm“?", 
-    options: ["a graph/chart", "a paragraph"], 
-    correct: 0 
-  },
-  { 
-    text: "„Studenten verschiedener Nationalitäten“ bedeutet:", 
-    options: ["Students of different nationalities", "Students of the same nationality"], 
-    correct: 0 
-  },
-  { 
-    text: "„Wie hoch ist …?“ fragt nach:", 
-    options: ["height/amount", "time"], 
-    correct: 0 
-  },
-  { 
-    text: "„Die … liegt bei …“ wird benutzt für:", 
-    options: ["indicating a value or number", "indicating a color"], 
-    correct: 0 
-  },
-  { 
-    text: "„am höchsten“ heißt:", 
-    options: ["the lowest", "the highest"], 
-    correct: 1 
-  },
-  { 
-    text: "„am niedrigsten“ heißt:", 
-    options: ["the lowest", "the highest"], 
-    correct: 0 
-  },
-  { 
-    text: "„Es ist gleichgeblieben“ bedeutet:", 
-    options: ["It has stayed the same", "It has changed"], 
-    correct: 0 
-  },
-  { 
-    text: "„Die Bevölkerung“ heißt:", 
-    options: ["population", "temperature"], 
-    correct: 0 
-  },
-  { 
-    text: "„eine Bevölkerung von 40 Mio“ bedeutet:", 
-    options: ["a population of 40 million", "a temperature of 40 degrees"], 
-    correct: 0 
-  },
-  { 
-    text: "„raus“ bedeutet:", 
-    options: ["out", "in"], 
-    correct: 0 
-  },
-  { 
-    text: "„rein“ bedeutet:", 
-    options: ["in", "out"], 
-    correct: 0 
-  },
-  { 
-    text: "„hoch“ oder „rauf“ bedeutet:", 
-    options: ["up", "down"], 
-    correct: 0 
-  },
-  { 
-    text: "„runter“ bedeutet:", 
-    options: ["up", "down"], 
-    correct: 1 
-  },
-  { 
-    text: "Was bedeutet „Froschteich“?", 
-    options: ["frog egg", "frog pond"], 
-    correct: 1 
-  },
-  { 
-    text: "Was heißt „künstlich“?", 
-    options: ["artificial", "natural"], 
-    correct: 0 
-  },
-  { 
-    text: "Was sind „Echseneier“?", 
-    options: ["lizard eggs", "fish eggs"], 
-    correct: 0 
-  },
-  { 
-    text: "„Sie züchtet verschiedene Spezies“ heißt:", 
-    options: ["She eats different species", "She breeds different species"], 
-    correct: 1 
-  },
-  { 
-    text: "„Fische vertragen sich nicht gut mit Echsen“ bedeutet:", 
-    options: ["Fish get along well with lizards", "Fish don’t get along well with lizards"], 
-    correct: 1 
-  },
-  { 
-    text: "Wie sagt man „Pflanzt du Dinge auf deinem Balkon?“ auf Englisch?", 
-    options: ["Do you plant things on your balcony?", "Do you eat things on your balcony?"], 
-    correct: 0 
-  },
-  { 
-    text: "Was ist der „Zitronenbaum“?", 
-    options: ["lime tree", "lemon tree"], 
-    correct: 1 
-  },
-  { 
-    text: "„Ich habe ihn seit Juni“ bedeutet:", 
-    options: ["I got it in June and then sold it", "I have had it since June"], 
-    correct: 1 
-  },
-  { 
-    text: "Was bedeutet „reif“ (bei Obst)?", 
-    options: ["ripe", "raw"], 
-    correct: 0 
-  },
-  { 
-    text: "„Dem Baum fehlen die Nährstoffe“ bedeutet:", 
-    options: ["The tree lacks nutrients", "The tree has too many nutrients"], 
-    correct: 0 
-  },
-  { 
-    text: "Was ist ein „Gewächshaus“?", 
-    options: ["garden shed", "greenhouse"], 
-    correct: 1 
-  },
-  { 
-    text: "Wie sagt man „jemanden zum Flughafen bringen“?", 
-    options: ["to pick someone up from the airport", "to take someone to the airport"], 
-    correct: 1 
-  },
-  { 
-    text: "Was bedeutet „würde der Baum wachsen, wenn es draußen wärmer wäre?“?", 
-    options: ["Would the tree grow if it were warmer outside?", "Did the tree grow when it was warmer outside?"], 
-    correct: 0 
-  },
-  { 
-    text: "Was ist der Unterschied zwischen „in“ und „aus“ (lokale Präpositionen)?", 
-    options: ["in = into / inside, aus = out of", "in = on top of, aus = under"], 
-    correct: 0 
-  },
-  { 
-    text: "„an/auf“ vs „von“ – welches Paar passt?", 
-    options: ["an/auf = from, von = position", "an/auf = position or contact, von = from"], 
-    correct: 1 
-  },
-  { 
-    text: "Wie sagt man „ich werde“ auf Englisch?", 
-    options: ["I will", "I was"], 
-    correct: 0 
-  },
-  { 
-    text: "„du wirst“ heißt:", 
-    options: ["you will", "you were"], 
-    correct: 0 
-  },
-  { 
-    text: "Was ist „die Kreide“?", 
-    options: ["marker", "chalk"], 
-    correct: 1 
-  },
-  { 
-    text: "„In Geografie lernt man etwas über …“", 
-    options: ["countries", "numbers"], 
-    correct: 0 
-  },
-  { 
-    text: "„Im Chemieunterricht“ bedeutet:", 
-    options: ["In chemistry class", "In physics class"], 
-    correct: 0 
-  },
-  { 
-    text: "Was ist „Ökologie und Umweltschutz“?", 
-    options: ["ecology and environmental protection", "biology and chemistry"], 
-    correct: 0 
-  },
-  { 
-    text: "„Sich auf etwas spezialisieren“ bedeutet:", 
-    options: ["to specialize in something", "to be interested in something"], 
-    correct: 0 
-  },
-  { 
-    text: "„Ich habe mich für … entschieden“ heißt:", 
-    options: ["I prepared for …", "I decided for …"], 
-    correct: 1 
-  },
-  { 
-    text: "„einfach so“ bedeutet:", 
-    options: ["with a special reason", "just because"], 
-    correct: 1 
-  },
-  { 
-    text: "„Was wünschst du dir?“ heißt:", 
-    options: ["What do you wish for?", "What do you give yourself?"], 
-    correct: 0 
-  },
-  { 
-    text: "„Nachhilfeunterricht“ ist:", 
-    options: ["private tutoring", "class trip"], 
-    correct: 0 
-  },
-  { 
-    text: "„sich verbessern“ bedeutet:", 
-    options: ["to get worse", "to improve"], 
-    correct: 1 
-  },
-  { 
-    text: "„etwas macht jemandem Spaß“ heißt:", 
-    options: ["someone hates something", "someone enjoys something"], 
-    correct: 1 
-  },
-  { 
-    text: "„Hat dir der Job Spaß gemacht?“ bedeutet:", 
-    options: ["Did you enjoy the job?", "Did you quit the job?"], 
-    correct: 0 
-  },
-  { 
-    text: "„Wirst du Samstagnacht schlafen können?“ heißt:", 
-    options: ["Will you be able to sleep Saturday night?", "Did you sleep Saturday night?"], 
-    correct: 0 
-  },
-  { 
-    text: "„umarmen“ bedeutet:", 
-    options: ["to run", "to hug"], 
-    correct: 1 
-  },
-  { 
-    text: "„auf etwas aufpassen“ heißt:", 
-    options: ["to take care of something", "to break something"], 
-    correct: 0 
-  },
-  { 
-    text: "„mitschreiben“ bedeutet:", 
-    options: ["to take notes", "to write a book"], 
-    correct: 0 
-  },
-  { 
-    text: "„aufpassen“ bedeutet:", 
-    options: ["to pay attention", "to sleep"], 
-    correct: 0 
-  },
-  { 
-    text: "„ungewöhnlich“ heißt:", 
-    options: ["unusual", "usual"], 
-    correct: 0 
-  },
-  { 
-    text: "„beeindruckt sein von“ bedeutet:", 
-    options: ["to be impressed by", "to be bored by"], 
-    correct: 0 
-  },
-  { 
-    text: "„eine Beziehung führen“ heißt:", 
-    options: ["to end a relationship", "to be in a relationship"], 
-    correct: 1 
-  }
+
+  // Wortschatz: Einwohner, Brüche
+  { text: "Was bedeutet ‚Einwohner‘?",
+    options: ["inhabitant", "neighbor"],
+    correct: 0 },
+
+  { text: "1/3 heißt auf Deutsch:",
+    options: ["ein Drittel", "ein Viertel"],
+    correct: 0 },
+
+  { text: "Wie sagt man ‚ein Fünftel der Ukrainer‘?",
+    options: ["1/5 der Ukrainer", "5 Ukrainer"],
+    correct: 0 },
+
+  { text: "Was bedeutet ‚das Doppelte von 10‘?",
+    options: ["20", "5"],
+    correct: 0 },
+
+  { text: "Was bedeutet ‚das Dreifache von 4‘?",
+    options: ["12", "8"],
+    correct: 0 },
+
+  { text: "50 % bedeutet:",
+    options: ["die Hälfte", "das Doppelte"],
+    correct: 0 },
+
+  // Schule
+  { text: "Was ist ‚die Federtasche‘?",
+    options: ["pencil case", "backpack"],
+    correct: 0 },
+
+  { text: "Was ist ‚der Schulranzen‘?",
+    options: ["school backpack", "lunch box"],
+    correct: 0 },
+
+  { text: "Was ist ‚die Schultüte‘?",
+    options: ["cone with sweets on first school day", "a school test"],
+    correct: 0 },
+
+  // für/dafür
+  { text: "‚Interessierst du dich für die Filme?‘ = ",
+    options: ["Do you care about the movies?", "Do you act in the movies?"],
+    correct: 0 },
+
+  { text: "‚Interessierst du dich dafür?‘ ersetzt:",
+    options: ["das Objekt mit ‚für‘", "das Subjekt"],
+    correct: 0 },
+
+  { text: "‚Ich bin glücklich über das Wetter‘ = ",
+    options: ["I am happy about the weather", "I am sad about the weather"],
+    correct: 0 },
+
+  { text: "‚Ich bin glücklich darüber, dass das Wetter schön ist.‘ = ",
+    options: ["I am happy that the weather is nice", "I am surprised that the weather is nice"],
+    correct: 0 },
+
+  // Berlin
+  { text: "Welches Gebäude gehört zu Berlin?",
+    options: ["das Brandenburger Tor", "der Kölner Dom"],
+    correct: 0 },
+
+  { text: "Was steht auf der Museumsinsel?",
+    options: ["das neue Museum", "der Eiffelturm"],
+    correct: 0 },
+
+  { text: "Der Reichstag ist Sitz von …",
+    options: ["dem Bundestag", "dem Europarat"],
+    correct: 0 },
+
+  // Perfekt vs. Präteritum
+  { text: "‚ich habe gespielt‘ ist:",
+    options: ["Perfekt", "Präteritum"],
+    correct: 0 },
+
+  { text: "‚ich spielte‘ ist:",
+    options: ["Präteritum", "Perfekt"],
+    correct: 0 },
+
+  { text: "‚ich schlief‘ ist:",
+    options: ["Präteritum", "Perfekt"],
+    correct: 0 },
+
+  { text: "‚ich habe geschlafen‘ ist:",
+    options: ["Perfekt", "Präteritum"],
+    correct: 0 },
+
+  // Irreguläre Verben
+  { text: "Präteritum von ‚essen‘ ist:",
+    options: ["ich aß", "ich esse"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚gehen‘ ist:",
+    options: ["ich ging", "ich gehe"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚sehen‘ ist:",
+    options: ["ich sah", "ich sehe"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚liegen‘ ist:",
+    options: ["ich lag", "ich liegte"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚fahren‘ ist:",
+    options: ["ich fuhr", "ich fahre"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚lesen‘ ist:",
+    options: ["ich las", "ich lese"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚treffen‘ ist:",
+    options: ["ich traf", "ich treffe"],
+    correct: 0 },
+
+  // Modalverben Präteritum
+  { text: "Präteritum von ‚ich darf‘ ist:",
+    options: ["ich durfte", "ich dorfte"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚ich muss‘ ist:",
+    options: ["ich musste", "ich misste"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚ich soll‘ ist:",
+    options: ["ich sollte", "ich solle"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚ich will‘ ist:",
+    options: ["ich wollte", "ich wullte"],
+    correct: 0 },
+
+  { text: "Präteritum von ‚ich kann‘ ist:",
+    options: ["ich konnte", "ich kennte"],
+    correct: 0 },
+
+  { text: "‚ich dürfte‘ ist:",
+    options: ["Konjunktiv II", "Präteritum"],
+    correct: 0 },
+
+  { text: "‚ich könnte‘ ist:",
+    options: ["Konjunktiv II", "Präteritum"],
+    correct: 0 }
+
 ];
     let currentQuestion = 0;
     let score = 0;
