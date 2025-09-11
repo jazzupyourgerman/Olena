@@ -206,221 +206,49 @@
     </div>
   </div>
 <script>
-const questions =
-[
-    {
-      "question": "die Anfragen",
-      "options": ["запити", "невдача"],
-      "answer": "запити"
-    },
-    {
-      "question": "Anfragen bezüglich …",
-      "options": ["запити щодо …", "конкуренція"],
-      "answer": "запити щодо …"
-    },
-    {
-      "question": "Urlaubsanfragen",
-      "options": ["запити на відпустку", "вигідний / недорогий"],
-      "answer": "запити на відпустку"
-    },
-    {
-      "question": "genug Leute",
-      "options": ["достатньо людей", "небезпека"],
-      "answer": "достатньо людей"
-    },
-    {
-      "question": "müde",
-      "options": ["втомлений / втомлена", "піклуватися про щось"],
-      "answer": "втомлений / втомлена"
-    },
-    {
-      "question": "der Dienstplan",
-      "options": ["графік роботи", "невдача"],
-      "answer": "графік роботи"
-    },
-    {
-      "question": "wir arbeiten in demselben Team",
-      "options": ["ми працюємо в одній і тій самій команді", "ми працюємо в одній команді"],
-      "answer": "ми працюємо в одній і тій самій команді"
-    },
-    {
-      "question": "wir arbeiten in einem Team",
-      "options": ["ми працюємо в одній команді", "ми молимося в одній команді"],
-      "answer": "ми працюємо в одній команді"
-    },
-    {
-      "question": "verantwortlich für …",
-      "options": ["відповідальний за …", "вигідніші ціни ніж …"],
-      "answer": "відповідальний за …"
-    },
-    {
-      "question": "sich um etwas kümmern",
-      "options": ["піклуватися про щось / займатися чимось", "кусати"],
-      "answer": "піклуватися про щось / займатися чимось"
-    },
-    {
-      "question": "in echt",
-      "options": ["насправді", "конкуренція"],
-      "answer": "насправді"
-    },
-    {
-      "question": "Kümmerst du dich darum, dass ihr genug Leute habt?",
-      "options": [
-        "Ти подбаєш про те, щоб у вас було достатньо людей?",
-        "Ти молишся, щоб у вас було достатньо людей?"
-      ],
-      "answer": "Ти подбаєш про те, щоб у вас було достатньо людей?"
-    },
-    {
-      "question": "die Gefahr",
-      "options": ["небезпека", "невдача"],
-      "answer": "небезпека"
-    },
-    {
-      "question": "gefährlich",
-      "options": ["небезпечний", "вигідний"],
-      "answer": "небезпечний"
-    },
-    {
-      "question": "das Pech",
-      "options": ["невдача", "запити"],
-      "answer": "невдача"
-    },
-    {
-      "question": "Ich hatte Pech mit …",
-      "options": ["Мені не пощастило з …", "Мені вигідно з …"],
-      "answer": "Мені не пощастило з …"
-    },
-    {
-      "question": "beißen",
-      "options": ["кусати", "просити"],
-      "answer": "кусати"
-    },
-    {
-      "question": "Es hat mich gebissen.",
-      "options": ["Воно мене вкусило.", "Тобі було боляче?"],
-      "answer": "Воно мене вкусило."
-    },
-    {
-      "question": "Hat es dir wehgetan?",
-      "options": ["Тобі було боляче?", "Ти молишся, щоб отримати комп’ютер?"],
-      "answer": "Тобі було боляче?"
-    },
-    {
-      "question": "reiten",
-      "options": ["їздити верхи", "вигідний / недорогий"],
-      "answer": "їздити верхи"
-    },
-    {
-      "question": "ein Foto machen von + Dativ",
-      "options": ["зробити фото чогось/когось", "піклуватися про щось"],
-      "answer": "зробити фото чогось/когось"
-    },
-    {
-      "question": "unterwegs",
-      "options": ["у дорозі / під час подорожі", "зосереджуватися на чомусь"],
-      "answer": "у дорозі / під час подорожі"
-    },
-    {
-      "question": "sich auf etwas konzentrieren",
-      "options": ["зосереджуватися на чомусь", "невдача"],
-      "answer": "зосереджуватися на чомусь"
-    },
-    {
-      "question": "entstehen",
-      "options": ["виникати, утворюватися", "вигідний / недорогий"],
-      "answer": "виникати, утворюватися"
-    },
-    {
-      "question": "Die ersten … sind 1850 entstanden.",
-      "options": ["Перші … виникли у 1850 році.", "Перші … працювали у 1850 році."],
-      "answer": "Перші … виникли у 1850 році."
-    },
-    {
-      "question": "günstig",
-      "options": ["вигідний / недорогий", "небезпечний"],
-      "answer": "вигідний / недорогий"
-    },
-    {
-      "question": "günstiger als …",
-      "options": ["вигідніший ніж …", "невдача"],
-      "answer": "вигідніший ніж …"
-    },
-    {
-      "question": "günstigere Preise als …",
-      "options": ["вигідніші ціни ніж …", "конкуренція"],
-      "answer": "вигідніші ціни ніж …"
-    },
-    {
-      "question": "die Konkurrenz",
-      "options": ["конкуренція", "запити"],
-      "answer": "конкуренція"
-    },
-    {
-      "question": "überzeugen",
-      "options": ["переконувати", "кусати"],
-      "answer": "переконувати"
-    },
-    {
-      "question": "bieten",
-      "options": ["пропонувати / надавати", "просити"],
-      "answer": "пропонувати / надавати"
-    },
-    {
-      "question": "Der Computer bietet viel Speicher.",
-      "options": ["Комп’ютер пропонує багато пам’яті.", "Комп’ютер молиться за пам’ять."],
-      "answer": "Комп’ютер пропонує багато пам’яті."
-    },
-    {
-      "question": "Der Computer hat viel Speicher geboten.",
-      "options": ["Комп’ютер надав багато пам’яті.", "Комп’ютер попросив багато пам’яті."],
-      "answer": "Комп’ютер надав багато пам’яті."
-    },
-    {
-      "question": "anbieten",
-      "options": ["пропонувати (комусь)", "молитися"],
-      "answer": "пропонувати (комусь)"
-    },
-    {
-      "question": "Ich biete dir einen Computer an.",
-      "options": ["Я пропоную тобі комп’ютер.", "Я прошу тебе купити комп’ютер."],
-      "answer": "Я пропоную тобі комп’ютер."
-    },
-    {
-      "question": "Ich habe dir einen Computer angeboten.",
-      "options": ["Я запропонував тобі комп’ютер.", "Я молився, щоб отримати комп’ютер."],
-      "answer": "Я запропонував тобі комп’ютер."
-    },
-    {
-      "question": "bitten",
-      "options": ["просити", "вигідний"],
-      "answer": "просити"
-    },
-    {
-      "question": "Ich bitte dich, einen Computer zu kaufen.",
-      "options": ["Я прошу тебе купити комп’ютер.", "Я молюся, щоб отримати комп’ютер."],
-      "answer": "Я прошу тебе купити комп’ютер."
-    },
-    {
-      "question": "Ich habe dich gebeten, einen Computer zu kaufen.",
-      "options": ["Я попросив тебе купити комп’ютер.", "Я запропонував тобі комп’ютер."],
-      "answer": "Я попросив тебе купити комп’ютер."
-    },
-    {
-      "question": "beten",
-      "options": ["молитися", "пропонувати"],
-      "answer": "молитися"
-    },
-    {
-      "question": "Ich bete, dass ich einen Computer bekomme.",
-      "options": ["Я молюся, щоб отримати комп’ютер.", "Я прошу тебе купити комп’ютер."],
-      "answer": "Я молюся, щоб отримати комп’ютер."
-    },
-    {
-      "question": "Ich habe gebetet, dass ich einen Computer bekomme.",
-      "options": ["Я молився, щоб отримати комп’ютер.", "Я пропоную тобі комп’ютер."],
-      "answer": "Я молився, щоб отримати комп’ютер."
-    }
+const questions = [
+  { "text": "die Anfragen", "options": ["запити", "невдача"], "correct": 0 },
+  { "text": "Anfragen bezüglich …", "options": ["запити щодо …", "конкуренція"], "correct": 0 },
+  { "text": "Urlaubsanfragen", "options": ["запити на відпустку", "вигідний / недорогий"], "correct": 0 },
+  { "text": "genug Leute", "options": ["достатньо людей", "небезпека"], "correct": 0 },
+  { "text": "müde", "options": ["втомлений / втомлена", "піклуватися про щось"], "correct": 0 },
+  { "text": "der Dienstplan", "options": ["графік роботи", "невдача"], "correct": 0 },
+  { "text": "wir arbeiten in demselben Team", "options": ["ми працюємо в одній і тій самій команді", "ми працюємо в одній команді"], "correct": 0 },
+  { "text": "wir arbeiten in einem Team", "options": ["ми працюємо в одній команді", "ми молимося в одній команді"], "correct": 0 },
+  { "text": "verantwortlich für …", "options": ["відповідальний за …", "вигідніші ціни ніж …"], "correct": 0 },
+  { "text": "sich um etwas kümmern", "options": ["піклуватися про щось / займатися чимось", "кусати"], "correct": 0 },
+  { "text": "in echt", "options": ["насправді", "конкуренція"], "correct": 0 },
+  { "text": "Kümmerst du dich darum, dass ihr genug Leute habt?", "options": ["Ти подбаєш про те, щоб у вас було достатньо людей?", "Ти молишся, щоб у вас було достатньо людей?"], "correct": 0 },
+  { "text": "die Gefahr", "options": ["небезпека", "невдача"], "correct": 0 },
+  { "text": "gefährlich", "options": ["небезпечний", "вигідний"], "correct": 0 },
+  { "text": "das Pech", "options": ["невдача", "запити"], "correct": 0 },
+  { "text": "Ich hatte Pech mit …", "options": ["Мені не пощастило з …", "Мені вигідно з …"], "correct": 0 },
+  { "text": "beißen", "options": ["кусати", "просити"], "correct": 0 },
+  { "text": "Es hat mich gebissen.", "options": ["Воно мене вкусило.", "Тобі було боляче?"], "correct": 0 },
+  { "text": "Hat es dir wehgetan?", "options": ["Тобі було боляче?", "Ти молишся, щоб отримати комп’ютер?"], "correct": 0 },
+  { "text": "reiten", "options": ["їздити верхи", "вигідний / недорогий"], "correct": 0 },
+  { "text": "ein Foto machen von + Dativ", "options": ["зробити фото чогось/когось", "піклуватися про щось"], "correct": 0 },
+  { "text": "unterwegs", "options": ["у дорозі / під час подорожі", "зосереджуватися на чомусь"], "correct": 0 },
+  { "text": "sich auf etwas konzentrieren", "options": ["зосереджуватися на чомусь", "невдача"], "correct": 0 },
+  { "text": "entstehen", "options": ["виникати, утворюватися", "вигідний / недорогий"], "correct": 0 },
+  { "text": "Die ersten … sind 1850 entstanden.", "options": ["Перші … виникли у 1850 році.", "Перші … працювали у 1850 році."], "correct": 0 },
+  { "text": "günstig", "options": ["вигідний / недорогий", "небезпечний"], "correct": 0 },
+  { "text": "günstiger als …", "options": ["вигідніший ніж …", "невдача"], "correct": 0 },
+  { "text": "günstigere Preise als …", "options": ["вигідніші ціни ніж …", "конкуренція"], "correct": 0 },
+  { "text": "die Konkurrenz", "options": ["конкуренція", "запити"], "correct": 0 },
+  { "text": "überzeugen", "options": ["переконувати", "кусати"], "correct": 0 },
+  { "text": "bieten", "options": ["пропонувати / надавати", "просити"], "correct": 0 },
+  { "text": "Der Computer bietet viel Speicher.", "options": ["Комп’ютер пропонує багато пам’яті.", "Комп’ютер молиться за пам’ять."], "correct": 0 },
+  { "text": "Der Computer hat viel Speicher geboten.", "options": ["Комп’ютер надав багато пам’яті.", "Комп’ютер попросив багато пам’яті."], "correct": 0 },
+  { "text": "anbieten", "options": ["пропонувати (комусь)", "молитися"], "correct": 0 },
+  { "text": "Ich biete dir einen Computer an.", "options": ["Я пропоную тобі комп’ютер.", "Я прошу тебе купити комп’ютер."], "correct": 0 },
+  { "text": "Ich habe dir einen Computer angeboten.", "options": ["Я запропонував тобі комп’ютер.", "Я молився, щоб отримати комп’ютер."], "correct": 0 },
+  { "text": "bitten", "options": ["просити", "вигідний"], "correct": 0 },
+  { "text": "Ich bitte dich, einen Computer zu kaufen.", "options": ["Я прошу тебе купити комп’ютер.", "Я молюся, щоб отримати комп’ютер."], "correct": 0 },
+  { "text": "Ich habe dich gebeten, einen Computer zu kaufen.", "options": ["Я попросив тебе купити комп’ютер.", "Я запропонував тобі комп’ютер."], "correct": 0 },
+  { "text": "beten", "options": ["молитися", "пропонувати"], "correct": 0 },
+  { "text": "Ich bete, dass ich einen Computer bekomme.", "options": ["Я молюся, щоб отримати комп’ютер.", "Я прошу тебе купити комп’ютер."], "correct": 0 },
+  { "text": "Ich habe gebetet, dass ich einen Computer bekomme.", "options": ["Я молився, щоб отримати комп’ютер.", "Я пропоную тобі комп’ютер."], "correct": 0 }
 ];
     let currentQuestion = 0;
     let score = 0;
